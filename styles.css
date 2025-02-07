@@ -1,0 +1,234 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling with a soft pastel gradient */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #f3e5f5);
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+  }
+  
+  /* Container for the main content */
+  .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: 80px auto 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styling using a cursive font */
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #d6336c;
+    margin-bottom: 20px;
+  }
+  
+  /* Message styling */
+  .message {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  /* Main heart styling with a heartbeat animation */
+  /* .main-heart {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4d6d;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 0 auto 30px auto;
+    animation: heartbeat 1.5s infinite;
+  }
+  
+  .main-heart::before,
+  .main-heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #ff4d6d;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .main-heart::before {
+    top: -50px;
+    left: 0;
+  }
+  
+  .main-heart::after {
+    left: 50px;
+    top: 0;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.2) rotate(-45deg); }
+  } */
+
+  /* Smaller Heart Styling with a heartbeat animation */
+.main-heart {
+    width: 60px;
+    height: 60px;
+    background-color: #ff4d6d;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 0 auto 20px auto;
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Top and right circles of the heart */
+.main-heart::before,
+.main-heart::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: #ff4d6d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.main-heart::before {
+    top: -30px;
+    left: 0;
+}
+
+.main-heart::after {
+    left: 30px;
+    top: 0;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.2) rotate(-45deg); }
+}
+
+  
+  /* Buttons container */
+  .buttons {
+    position: relative;
+    width: 100%;
+    height: 60px; /* enough room for button movement */
+  }
+  
+  /* Common button styles */
+  .buttons button {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* allow positional offsets */
+  }
+  
+  /* "Yes" button styling */
+  #yes {
+    background-color: #ff4d6d;
+    color: #fff;
+    width: 250px;
+    /* left: 20%; */
+    left: 140px;
+    bottom: 0;
+  }
+  
+  #yes:hover {
+    background-color: #e63950;
+    transform: scale(1.05);
+  }
+  
+  /* "No" button styling */
+  #no {
+    background-color: #ccc;
+    color: #333;
+    /* right: 20%; */
+    bottom: 77%;
+    left: 4%;
+    /* Set fixed dimensions so its size doesn't change */
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    /* Only animate position changes, not size or scale */
+    transition: left 0.3s ease, top 0.3s ease;
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center (optional) */
+
+  }
+  
+  #no:hover {
+    /* Remove any hover scaling to keep size consistent */
+    transform: none;
+  }
+  
+  /* Background hearts container covering the whole screen */
+  .background-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  /* Style for each floating background heart */
+  .heart-bg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d6d;
+    transform: rotate(-45deg);
+    animation: floatUp 8s infinite;
+    opacity: 0.7;
+  }
+  
+  .heart-bg::before,
+  .heart-bg::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d6d;
+    border-radius: 50%;
+  }
+  
+  .heart-bg::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart-bg::after {
+    left: 10px;
+    top: 0;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) rotate(-45deg) scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(-45deg) scale(1);
+      opacity: 0;
+    }
+  }
+  
